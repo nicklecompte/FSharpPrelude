@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Prelude", "src\Prelude\Prelude.fsproj", "{F19325B5-E758-47A8-AF58-CEF73464AF81}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PreludeTests", "test\PreludeTests\PreludeTests.fsproj", "{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{F19325B5-E758-47A8-AF58-CEF73464AF81}.Release|x64.Build.0 = Release|Any CPU
 		{F19325B5-E758-47A8-AF58-CEF73464AF81}.Release|x86.ActiveCfg = Release|Any CPU
 		{F19325B5-E758-47A8-AF58-CEF73464AF81}.Release|x86.Build.0 = Release|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Debug|x64.Build.0 = Debug|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Debug|x86.Build.0 = Debug|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Release|x64.ActiveCfg = Release|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Release|x64.Build.0 = Release|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Release|x86.ActiveCfg = Release|Any CPU
+		{1122E15E-F4CE-437A-ACC7-F413ADD6CEDA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
