@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Prelude.fs" />
+    <Compile Include="Lenses.fs" />
+    <Compile Include="Graph/BinaryRelation.fs" />
+    <Compile Include="Graph/Tree.fs" />
+    <Compile Include="Graph/Graph.fs" />
+    <Compile Include="Collections/Interfaces.fs" />
+    <Compile Include="Collections/CircularQueue.fs" />
+    <Compile Include="Collections\FunctionalQueue.fs" />
+    <Compile Include="Collections\FunctionalDequeue.fs" />
+    <Compile Include="Collections\Heap.fs" />
+    <Compile Include="Collections\SearchTree.fs" />
+    <Compile Include="Fast2DArray.fs" />
+    <Compile Include="Unsafe2DArray.fs" />
+    <Compile Include="Morphisms.fs" />
+    <Compile Include="Math/NumericTypes.fs" />
+    <Compile Include="Math/Probability.fs" />
+    <Compile Include="Logging.fs" />
+    <Compile Include="DependencyManagement.fs" />
+  </ItemGroup>
+</Project>
