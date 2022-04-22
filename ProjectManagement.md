@@ -3,7 +3,11 @@
 Below is my open-source JIRA implementation :) It is something of an unabridged 
 changelog.
 
-## 4/21/2022
+- [Current day](#current)
+- [Archive](#archive)
+- [How to read this document](#howto)
+
+## 4/21/2022 <a name="current"></a>
 
 Note: The first day of using this.
 
@@ -45,9 +49,10 @@ fundamental work in scoping this project out.
 
 - Basic research into unmanaged datatypes and methods
 
-## Archive
+## Archive <a name="archive"></a>
+- [4/21/2022](#4212022) 
 
-## 4/21/2022
+## 4/21/2022 <a name="4212022"></a>
 
 Note: The first day of using this.
 
@@ -90,7 +95,7 @@ fundamental work in scoping this project out.
 
 - Basic research into unmanaged datatypes and methods
 
-## How to read this poorly-conceived document 🙃
+## How to read this poorly-conceived document 🙃  <a name="howto"></a>
 
 As stated above, this can be thought of like an unabridged changelog, including 
 stages where the software is nowhere near release. The most recent update is 
@@ -103,7 +108,7 @@ the last release and the current.
 After the day is fully written, is it copy-pasted into the Archive. So there is
 some redundancy.
 
-**Legend**
+### Legend
 
 🗺: task needs considerable planning work
 
