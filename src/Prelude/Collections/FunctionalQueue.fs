@@ -50,9 +50,8 @@ module SimpleQueue =
         | [_] -> ValueSome (List.rev sqr,[]) 
         | _ :: xs -> ValueSome (xs,sqr)
     
-    /// snoc = cons from the left. Adding an element to the simple queue means
-    /// consing it to the second list.
-    let snoc ((sql,sqr) : SimpleQueue<'T>) (x:'T) : SimpleQueue<'T> =
+    /// Adding an element to a SimpleQueue<'T> means consing it to the snd list.
+    let enqueue ((sql,sqr) : SimpleQueue<'T>) (x:'T) : SimpleQueue<'T> =
         match sql with
         | [] -> (List.rev (x :: sqr),[])
         | _ -> (sql,x::sqr)
@@ -60,7 +59,7 @@ module SimpleQueue =
     let rec toIQueue (sq : SimpleQueue<'T>) : IQueue<'T> =
         {
           new IQueue<'T> with
-            member x.Insert ob : IQueue<'T> = toIQueue (snoc sq ob)
+            member x.Insert ob : IQueue<'T> = toIQueue (enqueue sq ob)
             member x.Head : 'T voption = head sq
             member x.Tail : IQueue<'T> voption =
                 match tail sq with

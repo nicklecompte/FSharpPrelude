@@ -149,6 +149,9 @@ module Prelude =
 
     [<RequireQualifiedAccess>]
     module NonemptyList =
+         
+        let singleton x = {head = x; rest = []}
+        
         let head x = x.head
 
         let tail (x:NonemptyList<'T>) = x.Tail
@@ -158,6 +161,13 @@ module Prelude =
             | [] -> {head=xs.head;rest=ys.head::ys.rest}
             | _ -> {head=xs.head;rest=List.append xs.rest (ys.head::ys.rest)}
 
-        let map mapping nlist =
-            {head = (mapping nlist.head);rest = (List.map mapping nlist.rest)}
+        let map mapping nList =
+            {head = (mapping nList.head);rest = (List.map mapping nList.rest)}
+            
+        let fold foldFn initialState nList =
+            let first = foldFn initialState nList.head
+            List.fold foldFn first nList.rest
+            
+        let ofList x = match x with | [] -> ValueNone | y::ys -> ValueSome {head = y; rest = ys}
 
+        let toList x = x.head :: x.rest

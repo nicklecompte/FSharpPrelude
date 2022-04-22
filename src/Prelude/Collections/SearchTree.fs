@@ -2,6 +2,7 @@
 
 open Prelude
 open Prelude.Collections.Interfaces
+open Prelude.Graph
 
 [<Struct>]
 type RBTColor = | Red | Black
@@ -13,6 +14,8 @@ type RBTColor = | Red | Black
 /// number of Black nodes. 
 /// The EmptyRBTree is considered a Black "node."
 /// All methods on this type are purely functional (though often inefficient).
+/// Note that this data type is specifically different from the BinaryTree<'T>
+/// in Prelude.Graph.
 type RedBlackTree<'T when 'T : comparison> =
     | EmptyRBTree
     | RBT of RBTColor * RedBlackTree<'T> * 'T * RedBlackTree<'T>

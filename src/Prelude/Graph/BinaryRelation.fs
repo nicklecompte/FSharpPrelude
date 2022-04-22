@@ -2,6 +2,7 @@ namespace Prelude.Graph
 
 open Prelude
 
+/// .NET interface of a very general graph. TODO: Might be worth getting rid of.
 type IBinaryRelation<'TVertex> =
     abstract member Domain : unit -> 'TVertex list
     abstract member AsPairList: unit -> ('TVertex* 'TVertex) list
@@ -31,7 +32,7 @@ type BinaryRelationProperty<'T> =
     | Reflexive
     | Transitive
     | Injective
-    | Combination of BinaryRelationProperty<'T> list
+    | Multiple of BinaryRelationProperty<'T> list
     /// If a BinaryRelation satisfies a property except for a finite number of
     /// points, then these points are enumerated in `exceptions`
     | WithException of BinaryRelationProperty<'T> * exceptions:'T list
@@ -71,5 +72,9 @@ module BinaryRelation =
             match List.contains h (relation.relations h) with
             | true -> isReflexive (tailDomain relation)
             | false -> false
+            
+    let isSymmetric (relation:BinaryRelation<'T>) =
+        let dom = relation.domain
+        not (Seq.exists (fun v -> List.contains v (relation.relations v)) dom)
 
     let adjacencyPreservingMap mapping relation = notImpl()

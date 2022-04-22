@@ -1,7 +1,6 @@
 namespace Prelude.Graph
 
 open Prelude
-open Prelude.Graph
 
 /// A recursive, functional tree.
 /// Note that the use of NonemptyList ensures that each representation is
@@ -95,7 +94,7 @@ module Tree =
                             cont (folder state v)) 
                                  (Branch(u, NonemptyList.append ls ys))
         inner id t
-
+        
 
 /// A fairly explicit implementation of binary trees.
 type BinaryTree<'T when 'T : comparison> =
@@ -140,6 +139,16 @@ module BinaryTree =
             BLeft(root,fromTree h)
         | Branch(root,{head=h;rest=x::xs}) -> notImpl()
             
+        (*
+type Tree<'TVertex> =
+    | Leaf of 'TVertex
+    | Branch of 'TVertex * NonemptyList<Tree<'TVertex>>
+
+        *)
         
     let rec toTree (bt: BinaryTree<'T>) : Tree<'T> =
-        notImpl()
+        match bt with
+        | BLeaf x -> Leaf x
+        | BLeft(t,bt2) -> Branch(t,NonemptyList.singleton (toTree bt2))
+        | BRight(t,bt2) -> Branch(t,NonemptyList.singleton (toTree bt2))
+        | BBoth(bt1,t,bt2) -> Branch(t,NonemptyList.append (NonemptyList.singleton (toTree bt2)) (NonemptyList.singleton (toTree bt1)))

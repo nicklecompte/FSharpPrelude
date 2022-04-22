@@ -12,7 +12,7 @@ open Prelude
 
 #nowarn "9"
 
-/// A standard, managed circular queue. Unsafe.
+/// A standard, managed circular queue. Not thread-safe.
 type CircularQueue<'T>(numberElements : int) =
     let innerBuffer = Array.zeroCreate<'T> numberElements
     let mutable startIndex = 0
@@ -57,6 +57,11 @@ type CircularQueue<'T>(numberElements : int) =
         member this.Insert (x: 'T) = this.Insert x
         member this.IsEmpty = this.Count = 0
         member this.Tail = notImpl()
+
+/// A standard managed circular queue using locks to ensure thread-safe queue
+/// operations.
+type CircularQueueThreadSafe<'T>(numElements : int) =
+    class end
     
 /// Optimized, unsafe circular queue over unmanaged types.
 type UnmanagedCircularQueue<'T when 'T : unmanaged>(numElements:int) =
